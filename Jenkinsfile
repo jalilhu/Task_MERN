@@ -10,6 +10,13 @@ pipeline {
                 checkout scm  // Pull the latest code from the repository
             }
         }
+        stage('Validate') {
+            steps {
+                script {
+                    sh 'ls -la'
+                }
+            }
+        }
         stage('Install Dependencies') {
             steps {
                 script {
